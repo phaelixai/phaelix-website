@@ -1,0 +1,256 @@
+/* Phaelix AI - Main Styles */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0F172A; /* Slate 900 */
+    color: #E2E8F0; /* Slate 200 */
+    overflow-x: hidden;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #6366F1, #A855F7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glass-effect {
+    background: rgba(30, 41, 59, 0.5); /* Slate 800 with 50% opacity */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(51, 65, 85, 0.5); /* Slate 700 with 50% opacity */
+}
+
+/* Improved focus states for accessibility */
+a:focus, button:focus {
+    outline: 2px solid #6366F1;
+    outline-offset: 2px;
+}
+
+/* Animated background elements */
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #6366F1, #A855F7);
+    opacity: 0.1;
+    animation: float 20s infinite linear;
+}
+
+.shape:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    top: 60%;
+    right: 15%;
+    animation-delay: -5s;
+}
+
+.shape:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    bottom: 20%;
+    left: 20%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+}
+
+/* Geometric patterns */
+.geometric-bg {
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 48%, rgba(99, 102, 241, 0.05) 50%, transparent 52%);
+    background-size: 100% 100%, 100% 100%, 20px 20px;
+}
+
+/* Glowing effects */
+.glow-effect {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+.glow-effect:hover {
+    box-shadow: 0 0 50px rgba(99, 102, 241, 0.5);
+}
+
+/* Animated gradient border */
+.gradient-border {
+    position: relative;
+    background: linear-gradient(45deg, #6366F1, #A855F7, #EC4899, #6366F1);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease infinite;
+    padding: 2px;
+    border-radius: 16px;
+}
+
+.gradient-border > div {
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 14px;
+    padding: 24px;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Particle effect */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #6366F1;
+    border-radius: 50%;
+    animation: particleFloat 15s infinite linear;
+}
+
+@keyframes particleFloat {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
+}
+
+/* Project showcase specific styles */
+.project-thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.project-thumbnail:hover {
+    transform: scale(1.02);
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-thumbnail:hover .project-overlay {
+    opacity: 1;
+}
+
+.play-button {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.status-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: linear-gradient(to right, #10B981, #059669);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gradient-border > div {
+        padding: 16px;
+    }
+    
+    .project-thumbnail {
+        height: 240px;
+    }
+    
+    .play-button {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .status-badge {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+}
+
+/* Video Modal Styles */
+#videoModal {
+    transition: opacity 0.3s ease;
+}
+
+#videoModal:not(.hidden) {
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal backdrop blur effect */
+#videoModal .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Video container responsive adjustments */
+@media (max-width: 768px) {
+    #videoModal .max-w-4xl {
+        max-width: 95vw;
+    }
+    
+    #videoModal .p-4 {
+        padding: 1rem;
+    }
+    
+    #videoModal .-top-12 {
+        top: -3rem;
+    }
+} 
