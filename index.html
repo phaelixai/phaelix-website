@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script
+        type="module"
+        src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js">
+    </script>
 </head>
 <body class="antialiased">
 
@@ -45,30 +49,12 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="gradient-border">
                         <div class="p-8">
-                            <!-- Hugging Face Bot - Direct Link (iframe blocked by X-Frame-Options) -->
+                            <!-- Hugging Face Bot - Gradio Web Component -->
                             <div class="w-full h-96 bg-slate-800/50 rounded-lg border border-slate-700 flex items-center justify-center">
-                                <div class="text-center">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                                        </svg>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-white mb-4">
-                                        <span class="gradient-text">AI Assistant</span> - Powered by Hugging Face
-                                    </h4>
-                                    <p class="text-slate-300 text-lg mb-6 max-w-md mx-auto">
-                                        Experience our advanced AI assistant built with cutting-edge language models. 
-                                        Click below to interact with our chatbot.
-                                    </p>
-                                    <a href="https://huggingface.co/spaces/Phaelix/PhaelixBot" 
-                                       target="_blank" 
-                                       rel="noopener noreferrer" 
-                                       class="gradient-border inline-block glow-effect">
-                                        <div class="text-white font-bold px-8 py-4 text-center">
-                                            🤖 Try Our AI Assistant
-                                        </div>
-                                    </a>
-                                </div>
+                                <gradio-app 
+                                    src="https://phaelix-raphaelbot.hf.space"
+                                    class="w-full h-full rounded-lg">
+                                </gradio-app>
                             </div>
                             
                             <!-- Bot Description -->
